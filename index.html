@@ -25,8 +25,8 @@
     function authorize() {
         const initData = window.Telegram?.WebApp?.initData;
         if (initData) {
-            const userData = new URLSearchParams(initData)
-            document.getElementById('user-info').innerText = `Добро пожаловать, ${userData.get('first_name')}! id: ${userData.get('user_id')}`;
+            const userData = JSON.parse(new URLSearchParams(initData)?.get('user'))
+            document.getElementById('user-info').innerText = `Добро пожаловать, ${userData.first_name}! id: ${userData.id} userName: ${userData.username}`;
             document.getElementById('init-data').innerText = initData;
         }
     }
