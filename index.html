@@ -16,15 +16,14 @@
 </head>
 <body>
 <h1>Привет, это Ivon App!</h1>
-<p id="user-info">&&&</p>
+<p id="user-info"></p>
 <button onclick="authorize()">Авторизоваться</button>
 
 <script>
     function authorize() {
-        const initData = window.Telegram?.WebApp?.initData;
+        const initData = window.Telegram?.WebAppUser;
         if (initData) {
-            console.log(initData);
-            document.getElementById('user-info').innerText = `Добро пожаловать, ${initData}!`;
+            document.getElementById('user-info').innerText = `Добро пожаловать, ${initData?.first_name}! Id: ${initData?.id}`;
         }
     }
 </script>
