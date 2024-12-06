@@ -23,7 +23,7 @@
         const initData = Telegram.WebApp.initData;
         if (initData) {
             console.log(initData);
-            document.getElementById('user-info').innerText = `Добро пожаловать, ${data.user.first_name}!`;
+            document.getElementById('user-info').innerText = `Добро пожаловать, ${initData}!`;
         }
     }
 </script>
