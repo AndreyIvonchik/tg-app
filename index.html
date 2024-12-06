@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>test tg app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test app</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: white;
+        }
+    </style>
 </head>
 <body>
-    lol kek
+<h1>Привет, это Ivon App!</h1>
+<p id="user-info"></p>
+<button onclick="authorize()">Авторизоваться</button>
+
+<script>
+    function authorize() {
+        const initData = Telegram.WebApp.initData;
+        if (initData) {
+            console.log(initData);
+            document.getElementById('user-info').innerText = `Добро пожаловать, ${data.user.first_name}!`;
+        }
+    }
+</script>
 </body>
 </html>
